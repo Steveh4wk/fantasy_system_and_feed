@@ -1,4 +1,4 @@
-# Sistema Fantasy e Animal Farm
+# Sistema Fantasy e Animal Spawn for Feed
 
 Questo e un sistema per FiveM che permette di giocare con creature fantastiche come vampiri, licantropi e animagus. Ci sono anche animali che si possono allevare e cacciare.
 
@@ -28,6 +28,8 @@ Questa risorsa gestisce gli oggetti. Ci sono item come sangue e carne che si ott
 - Usa i tasti 0-6 per incantesimi.
 - Premi E vicino agli animali per mangiarli e riempire fame e sete.
 - Alleva animali con comandi admin.
+- items.lua aggiungere solo contenuto
+- sangue.png in ox_inventory/web/images/
 
 ## Dipendenze
 
@@ -39,3 +41,4 @@ Questa risorsa gestisce gli oggetti. Ci sono item come sangue e carne che si ott
 
 
 Stefano Luciano Corp
+
