@@ -8,7 +8,7 @@ Questo e un sistema per FiveM che permette di giocare con creature fantastiche c
 Questa risorsa permette di trasformarsi in creature fantastiche. Ci sono vampiri, licantropi e animagus. Per trasformarsi si usa il menu con F7. Le creature possono mangiare animali per avere fame e sete.
 
 ### fantasy_skilltree
-Questa risorsa da poteri speciali alle creature. Ogni creatura ha incantesimi da 0 a 6. Si usano i tasti da 0 a 6 per lanciare gli incantesimi. Ci sono cooldown per non abusare.
+Questa risorsa da poteri speciali alle creature. Ogni creatura ha incantesimi da 6 a 0. Si usano i tasti 6/7/8/9/0 per lanciare gli incantesimi. Ci sono cooldown per non abusare.
 
 ### animal_farm
 Questa risorsa spawna animali nel mondo. Gli animali si possono cacciare dalle creature fantastiche. Si possono anche allevare animali domestici.
@@ -36,5 +36,6 @@ Questa risorsa gestisce gli oggetti. Ci sono item come sangue e carne che si ott
 - ox_inventory
 
 ## Autore
+
 
 Stefano Luciano Corp
