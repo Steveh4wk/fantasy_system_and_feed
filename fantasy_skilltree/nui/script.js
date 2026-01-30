@@ -1,10 +1,10 @@
 // Fantasy Skill Bar - Stile Metin2
 
-// 🎯 VARIABILI GLOBALI
+//  VARIABILI GLOBALI
 let currentForm = null;
 let isBarVisible = false;
 
-// 🎯 CONFIGURAZIONE SPELL PER FORMA
+// CONFIGURAZIONE SPELL PER FORMA CO ICONE WINDOWS
 const spellConfig = {
     vampire: {
         1: { name: 'Blood Thirst', icon: '🩸', key: '6' },
@@ -29,7 +29,7 @@ const spellConfig = {
     }
 };
 
-// 🎯 MESSAGE HANDLER
+//  MESSAGE HANDLER
 window.addEventListener('message', function(event) {
     console.log('[DEBUG] Message received from FiveM:', event.data);
     
@@ -57,7 +57,7 @@ window.addEventListener('message', function(event) {
     }
 });
 
-// 🎯 FUNZIONE PER MOSTRARE LA SKILL BAR
+//  FUNZIONE PER MOSTRARE LA SKILL BAR
 function showSkillBar(form, spells, noFocus = false) {
     console.log('[DEBUG] Showing skill bar for form:', form, 'noFocus:', noFocus);
     
@@ -93,7 +93,7 @@ function showSkillBar(form, spells, noFocus = false) {
     console.log('[DEBUG] Skill bar shown successfully');
 }
 
-// 🎯 FUNZIONE PER NASCONDERE LA SKILL BAR
+// FUNZIONE PER NASCONDERE LA SKILL BAR
 function hideSkillBar() {
     console.log('[DEBUG] Hiding skill bar');
     
@@ -108,7 +108,7 @@ function hideSkillBar() {
     console.log('[DEBUG] Skill bar hidden');
 }
 
-// 🎯 FUNZIONE PER AGGIORNARE LE SPELL
+//  FUNZIONE PER AGGIORNARE LE SPELL
 function updateSpells(form) {
     console.log('[DEBUG] Updating spells for form:', form);
     
@@ -144,7 +144,7 @@ function updateSpells(form) {
     console.log('[DEBUG] Spells updated successfully');
 }
 
-// 🎯 FUNZIONE PER AGGIORNARE IL COOLDOWN
+//  FUNZIONE PER AGGIORNARE IL COOLDOWN
 function updateCooldown(slot, remaining) {
     console.log('[DEBUG] Updating cooldown for slot', slot, 'remaining:', remaining);
     
@@ -192,7 +192,7 @@ function updateCooldown(slot, remaining) {
     }
 }
 
-// 🎯 FUNZIONE PER ANIMAZIONE DI CAST
+//  FUNZIONE PER ANIMAZIONE DI CAST
 function playCastAnimation(slot) {
     console.log('[DEBUG] Playing cast animation for slot', slot);
     
@@ -208,7 +208,7 @@ function playCastAnimation(slot) {
     }, 500);
 }
 
-// 🎯 CLICK HANDLER PER GLI SLOT
+//  CLICK HANDLER PER GLI SLOT
 document.addEventListener('DOMContentLoaded', function() {
     console.log('[DEBUG] DOM loaded, setting up click handlers');
     
