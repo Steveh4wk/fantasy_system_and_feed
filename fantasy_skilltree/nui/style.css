@@ -1,0 +1,377 @@
+/* Fantasy Skill Bar - Stile Metin2 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Skill Bar Container */
+#skillBar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.9));
+    border: 2px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+#skillBar.hidden {
+    display: none;
+}
+
+/* Skill Slot Stile Metin2 */
+.skill-slot {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background: linear-gradient(135deg, #2a2a3a, #1a1a2a);
+    border: 2px solid #555;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.skill-slot:hover {
+    border-color: #888;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+.skill-slot.active {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Skill Icon */
+.skill-icon {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    z-index: 2;
+}
+
+.skill-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.skill-icon.empty {
+    color: #666;
+    font-size: 20px;
+}
+
+/* Skill Name */
+.skill-name {
+    position: absolute;
+    bottom: 2px;
+    font-size: 8px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    opacity: 0.8;
+}
+
+/* Skill Key */
+.skill-key {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffd700;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 1px solid #444;
+    z-index: 3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Cooldown Overlay */
+.cooldown-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.cooldown-overlay.active {
+    opacity: 1;
+}
+
+/* Cooldown Timer */
+.cooldown-timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 5;
+}
+
+/* Temi per Creature */
+
+/* Vampiro */
+.vampire .skill-slot {
+    background: linear-gradient(135deg, #4a1a1a, #2a0a0a);
+    border-color: #8b0000;
+}
+
+.vampire .skill-slot:hover {
+    border-color: #cd5c5c;
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
+}
+
+.vampire .skill-slot.active {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.7);
+}
+
+.vampire .skill-key {
+    background: rgba(139, 0, 0, 0.8);
+    border-color: #8b0000;
+}
+
+/* Lican */
+.lycan .skill-slot {
+    background: linear-gradient(135deg, #3a2a1a, #1a0a0a);
+    border-color: #8b6914;
+}
+
+.lycan .skill-slot:hover {
+    border-color: #daa520;
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.3);
+}
+
+.lycan .skill-slot.active {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.7);
+}
+
+.lycan .skill-key {
+    background: rgba(139, 105, 20, 0.8);
+    border-color: #8b6914;
+}
+
+/* Animagus */
+.animagus .skill-slot {
+    background: linear-gradient(135deg, #2a3a1a, #1a2a0a);
+    border-color: #6b8e23;
+}
+
+.animagus .skill-slot:hover {
+    border-color: #9acd32;
+    box-shadow: 0 6px 20px rgba(107, 142, 35, 0.3);
+}
+
+.animagus .skill-slot.active {
+    border-color: #adff2f;
+    box-shadow: 0 0 15px rgba(107, 142, 35, 0.7);
+}
+
+.animagus .skill-key {
+    background: rgba(107, 142, 35, 0.8);
+    border-color: #6b8e23;
+
+.slots-container {
+    padding: 30px 20px;
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    justify-items: center;
+}
+
+.skill-slot {
+    width: 80px;
+    height: 100px;
+    background: rgba(30, 30, 50, 0.8);
+    border: 2px solid rgba(147, 51, 234, 0.3);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.skill-slot:hover {
+    transform: translateY(-5px);
+    border-color: rgba(147, 51, 234, 0.8);
+    box-shadow: 0 5px 20px rgba(147, 51, 234, 0.4);
+}
+
+.skill-slot.active {
+    border-color: #9333ea;
+    background: rgba(147, 51, 234, 0.2);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+}
+
+.slot-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: rgba(147, 51, 234, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.slot-info {
+    text-align: center;
+    width: 100%;
+}
+
+.skill-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #e5e7eb;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.skill-key {
+    font-size: 10px;
+    color: #9333ea;
+    font-weight: bold;
+    background: rgba(147, 51, 234, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.footer {
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(147, 51, 234, 0.3);
+    background: rgba(147, 51, 234, 0.05);
+}
+
+.footer p {
+    font-size: 12px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#skillTree:not(.hidden) {
+    animation: fadeIn 0.3s ease;
+}
+
+.skill-slot:hover .slot-icon {
+    animation: pulse 1s infinite;
+}
+
+/* Temi per forme diverse */
+#skillTree.vampire {
+    border-color: rgba(220, 38, 38, 0.5);
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+#skillTree.vampire .header {
+    background: rgba(220, 38, 38, 0.1);
+}
+
+#skillTree.vampire #formTitle {
+    color: #dc2626;
+    text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+}
+
+#skillTree.lycan {
+    border-color: rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+}
+
+#skillTree.lycan .header {
+    background: rgba(245, 158, 11, 0.1);
+}
+
+#skillTree.lycan #formTitle {
+    color: #f59e0b;
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+#skillTree.animagus {
+    border-color: rgba(34, 197, 94, 0.5);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+}
+
+#skillTree.animagus .header {
+    background: rgba(34, 197, 94, 0.1);
+}
+
+#skillTree.animagus #formTitle {
+    color: #22c55e;
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
