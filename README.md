@@ -37,5 +37,4 @@ Questa risorsa gestisce gli oggetti. Ci sono item come sangue e carne che si ott
 
 ## Autore
 
-Stefano Luciano Corp 
-per AstralRP
+Stefano Luciano Corp
